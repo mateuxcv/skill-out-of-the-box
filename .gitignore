@@ -20,3 +20,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.log
+
+# Local evaluation outputs may contain project-specific traces
+.evaluation-runs/

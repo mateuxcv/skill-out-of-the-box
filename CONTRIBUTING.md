@@ -1,61 +1,59 @@
-# Contribuindo com Out of the Box
+# Contributing to Out of the Box
 
-Obrigado por ajudar a melhorar a skill. O objetivo é aumentar a utilidade das decisões de produto e arquitetura, mantendo as instruções claras e proporcionais à tarefa.
+Help improve the quality of product and architecture decisions while keeping the instructions concise and proportional to the task.
 
-## Onde contribuir
+## Valuable contributions
 
-- Métodos criativos com exemplos concretos de trabalho B2B.
-- Critérios melhores para pesquisar, comparar e combinar soluções.
-- Orientações de design, acessibilidade e arquitetura aplicáveis ao contexto.
-- Cenários que revelem ativação indevida, decisões ruins ou pesquisa sem evidência.
-- Correções de documentação, instalação e validação.
+- Creative methods grounded in real B2B jobs.
+- Better evidence and compatibility checks for library composition.
+- Concrete design, accessibility, and architecture improvements.
+- Reproducible cases of false activation, shallow novelty, or unsupported claims.
+- Clearer installation, documentation, and validation.
 
-## Reportar um problema
+## Report an issue
 
-Abra uma [issue](https://github.com/mateuxcv/skill-out-of-the-box/issues) contendo:
+Include the goal, original prompt, expected behavior, observed behavior, and a minimal example. Record the model, harness version, and available tools when known. Remove credentials and private data from traces.
 
-1. O objetivo da tarefa e o prompt utilizado.
-2. Modelo, versão do OpenCode e ferramentas disponíveis, quando conhecidos.
-3. Comportamento esperado e comportamento observado.
-4. Um exemplo mínimo reproduzível, removendo credenciais e dados privados.
-5. A seção da skill relacionada, se conseguir identificá-la.
+Separate observations from hypotheses about their cause. An issue should explain a problem, not just request more instructions.
 
-Diferencie o que foi observado do que é uma hipótese sobre a causa.
+## Submit a focused change
 
-## Propor uma mudança
-
-1. Crie um fork e uma branch descritiva.
-2. Faça uma mudança focada e explique qual problema ela resolve.
-3. Preserve o frontmatter e mantenha o `SKILL.md` abaixo de 500 linhas.
-4. Leve detalhes extensos para `references/`, com um link direto no arquivo principal.
-5. Atualize exemplos e cenários afetados pela alteração.
-6. Execute o validador estrutural:
+1. Create a fork and a descriptive branch.
+2. Identify the observed problem and the smallest coherent improvement.
+3. Write public documentation, skill content, examples, and evaluation cases in English. Runtime conversation can follow the user's language.
+4. Keep `SKILL.md` below 500 lines and load detailed references conditionally.
+5. Preserve the simple frontmatter convention: a plain `name` and a double-quoted `description`. Update the validator deliberately if expanding that supported subset.
+6. Update affected examples and evaluation cases without embedding desired outputs as fake results.
+7. Run:
 
    ```bash
    python scripts/validate_skill.py
+   python -m unittest discover -s tests -v
    ```
 
-7. Se alterar o comportamento, experimente os cenários relevantes em sessões novas e registre o resultado. Reinicie o OpenCode após editar a skill.
-8. Abra um pull request com objetivo, resumo da mudança e verificações realizadas.
+8. For behavioral changes, compare relevant cases in fresh sessions when possible. Restart OpenCode after changing an installed skill.
+9. Submit a pull request with the problem, change, evidence, and remaining limitations.
 
-## Princípios editoriais
+## Evaluation conventions
 
-- Escreva em português claro, com instruções acionáveis.
-- Prefira critérios observáveis a adjetivos genéricos.
-- Evite regras que obriguem a adotar uma stack, biblioteca ou arquitetura específica.
-- Distinga exemplos ilustrativos de compatibilidades e resultados verificados.
-- Registre fontes para afirmações técnicas que dependam de informação externa.
-- Mantenha a profundidade proporcional ao problema.
+Case definitions live in [.opencode/skills/out-of-the-box/evals/evals.json](.opencode/skills/out-of-the-box/evals/evals.json). Follow the [evaluation guide](.opencode/skills/out-of-the-box/references/evaluation.md).
 
-## Como relatar a avaliação
+- `context` describes setup the evaluator must actually supply.
+- `files` contains fixture paths relative to the skill root; empty means no bundled fixture.
+- Assertions should distinguish useful behavior, not require exact wording.
+- Negative trigger controls should run without explicitly forcing the skill to load.
+- Store actual results separately from definitions and name the revision and environment.
+- Label author walkthroughs honestly. Do not report them as independent fresh-session runs.
 
-Use os [cenários comportamentais](.opencode/skills/out-of-the-box/references/evaluation.md) como referência. Inclua:
-
-| Campo | O que informar |
+| Result field | Record |
 | --- | --- |
-| Ambiente | Modelo, data, ferramentas e contexto fornecido. |
-| Cenário | Prompt e restrições usadas. |
-| Evidência | Entrega e chamadas de ferramentas pertinentes. |
-| Resultado | O que funcionou, o que falhou e o que não foi verificado. |
+| Environment | Model, date, revision, tools, and supplied context. |
+| Evidence | Actual output or relevant tool events. |
+| Grade | Pass, fail, or not observed for each assertion. |
+| Limitations | Missing setup, unavailable tools, or untested assumptions. |
 
-A aprovação do CI confirma a validação estrutural. A eficácia de uma mudança de instruções precisa de avaliação comportamental separada.
+## Editorial principles
+
+Prefer observable mechanisms to vague adjectives. Keep the native/existing-stack alternative in view. Avoid mandating a framework, package, or architecture. Explain the purpose of constraints and distinguish documentation, experiments, and measurements.
+
+Add tests for meaningful validator behavior, not for every sentence of prose. Passing CI establishes package integrity; improved agent behavior requires separate evidence.

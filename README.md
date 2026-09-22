@@ -2,311 +2,295 @@
 
 # Out of the Box
 
-### Criatividade aplicada a produtos B2B. Arquitetura com propósito.
+### Creative B2B products. Evidence-backed choices. Lean architecture.
 
-Uma skill para agentes que conecta **design de produto**, **pesquisa técnica** e **combinação criteriosa de bibliotecas** — da primeira hipótese à implementação.
+An agent skill that connects **product design**, **technical discovery**, and **purposeful library composition**—from the first hypothesis to a working solution.
 
-[![Validação](https://github.com/mateuxcv/skill-out-of-the-box/actions/workflows/validate.yml/badge.svg)](https://github.com/mateuxcv/skill-out-of-the-box/actions/workflows/validate.yml)
-[![OpenCode](https://img.shields.io/badge/feito_para-OpenCode-18181B)](https://opencode.ai/docs/skills/)
-[![Agent Skills](https://img.shields.io/badge/formato-Agent_Skills-2563EB)](https://agentskills.io/specification)
+[![Validation](https://github.com/mateuxcv/skill-out-of-the-box/actions/workflows/validate.yml/badge.svg)](https://github.com/mateuxcv/skill-out-of-the-box/actions/workflows/validate.yml)
+[![OpenCode](https://img.shields.io/badge/built_for-OpenCode-18181B)](https://opencode.ai/docs/skills/)
+[![Agent Skills](https://img.shields.io/badge/format-Agent_Skills-2563EB)](https://agentskills.io/specification)
 
-[Começar](#começar) · [Como funciona](#como-funciona) · [Exemplos](#exemplos-de-uso) · [Documentação](#documentação) · [Contribuir](#contribuir)
+[Quick start](#quick-start) · [Workflow](#how-it-works) · [Examples](#usage-examples) · [Documentation](#documentation) · [Contributing](#contributing)
 
 </div>
 
 ---
 
-## Por que esta skill existe?
+## Why this skill?
 
-Uma boa aplicação empresarial começa pelo trabalho que precisa ser feito: investigar uma divergência, revisar um contrato, aprovar um fornecedor ou decidir o próximo passo de uma operação.
+A valuable business application starts with a job: investigating an exception, reviewing a contract, approving a supplier, or deciding what needs attention next.
 
-**Out of the Box** orienta o agente a explorar maneiras diferentes de resolver esse trabalho, pesquisar soluções além do repertório habitual e escolher uma composição técnica que faça sentido para o projeto.
+**Out of the Box** helps an agent challenge the obvious workflow, discover capabilities beyond its usual stack, and choose an implementation whose complexity is justified by its value.
 
-> **Amplitude na exploração. Rigor na seleção. Simplicidade na execução.**
+> **Explore broadly. Select rigorously. Build simply.**
 
-O resultado esperado é uma experiência com diferencial concreto, sustentada por evidências e por uma arquitetura que a equipe consiga manter.
+The goal is a distinctive experience with clear technical responsibilities—not a particular framework or a fixed list of libraries.
 
-## O que você encontra aqui
+## What makes it different
 
-| Capacidade | Aplicação prática |
+| Capability | What the agent does |
 | --- | --- |
-| **Exploração criativa** | Transferência de padrões entre domínios, inversão de fluxos, subtração de etapas e recombinação de capacidades. |
-| **Pesquisa atual** | GitHub Trending, busca orientada ao problema, documentação oficial, releases e registros de pacotes. |
-| **Seleção de bibliotecas** | Comparação por adequação, compatibilidade, manutenção, custo total e alternativas já disponíveis na stack. |
-| **Design B2B** | Hierarquia, densidade de informação, ações contextuais, teclado, estados de interface e identidade visual. |
-| **Arquitetura enxuta** | Responsabilidades claras, fonte de verdade definida e dependências com contribuição demonstrável. |
-| **Execução verificável** | Experimentos pequenos, critérios de sucesso e implementação proporcional ao pedido. |
+| **Mechanism-level creativity** | Changes the unit of work, decision sequence, interaction, or coordination—not just colors and layout. |
+| **A bold, feasible challenger** | Tests an unfamiliar but useful direction before defaulting to the familiar baseline. |
+| **Current technical discovery** | Consults GitHub Trending, problem-oriented search, and primary sources for relevant finalists. |
+| **Evidence levels** | Distinguishes discovered candidates, documented capabilities, tested integrations, and measured outcomes. |
+| **Composition and subtraction** | Defines what each part owns, then checks whether removing one preserves the distinctive value. |
+| **An inspectable design contract** | Specifies the signature interaction, composition, hierarchy, realistic content, keyboard path, and recovery. |
+| **Falsifiable experiments** | States what would disprove a direction before committing to its architecture. |
+| **Proportional effort** | Uses a focused pass for one interaction and deeper proof for costly or uncertain choices. |
 
-## Começar
+## Quick start
 
-### Requisitos
+### Requirements
 
-- **OpenCode** instalado, com acesso à ferramenta de skills.
-- **Git** para clonar este repositório, ou GitHub CLI para usar `gh repo clone`.
-- Acesso web no agente para pesquisa atual de soluções.
-- **Python 3** apenas para executar o validador local; a skill em si é composta por Markdown.
+- **OpenCode** with the skill tool available.
+- **Git**, or GitHub CLI, to clone the repository.
+- Web tools for current research; without them, the agent should label recommendations as provisional.
+- **Python 3.10+** only for repository validation and tests. The installed skill itself is Markdown and JSON.
 
-### 1. Clone o repositório
+### 1. Clone
 
 ```bash
 git clone https://github.com/mateuxcv/skill-out-of-the-box.git
 cd skill-out-of-the-box
 ```
 
-Se você usa GitHub CLI:
+Or use `gh repo clone mateuxcv/skill-out-of-the-box`, then enter the cloned directory.
 
-```bash
-gh repo clone mateuxcv/skill-out-of-the-box
-cd skill-out-of-the-box
-```
-
-### 2. Abra o OpenCode
+### 2. Open the project
 
 ```bash
 opencode
 ```
 
-A skill já está no diretório de descoberta deste projeto:
+The skill is already in OpenCode's project discovery directory:
 
 ```text
 .opencode/skills/out-of-the-box/SKILL.md
 ```
 
-Se o OpenCode já estava aberto, **feche e reinicie a sessão** para atualizar as skills disponíveis.
+**Quit and restart OpenCode** if it was already running when the skill was added or changed.
 
-### 3. Dê um problema concreto ao agente
+### 3. Give the agent a concrete job
 
 ```text
-Use a skill out-of-the-box para criar uma proposta de portal B2B de fornecedores.
-Explore abordagens diferentes de experiência, consulte o GitHub Trending e
-fontes oficiais, e compare bibliotecas com a stack existente.
-Escolha uma arquitetura simples e explique o diferencial do fluxo principal.
+Use the out-of-the-box skill to propose a B2B supplier portal.
+Explore different workflow mechanisms, consult GitHub Trending and primary sources,
+and compare candidate libraries with the existing stack.
+Choose a lean architecture and define the signature interaction and its falsifying test.
 ```
 
-Para desenvolver o produto, acrescente o escopo desejado, as restrições da stack e o pedido de implementação.
+For a build task, provide the target project, constraints, and implementation scope. The agent should continue through delivery and verification.
 
-### Instalar em outro projeto ou globalmente
+### Install in another project or globally
 
-Copie a pasta **inteira** `.opencode/skills/out-of-the-box/`, incluindo `references/` e `assets/`, para o destino escolhido:
+Copy the **entire** `.opencode/skills/out-of-the-box/` directory, including its references, assets, and evaluation cases:
 
-| Escopo | Destino |
+| Scope | Destination |
 | --- | --- |
-| Outro projeto | `<seu-projeto>/.opencode/skills/out-of-the-box/` |
-| Global — macOS/Linux | `~/.config/opencode/skills/out-of-the-box/` |
-| Global — Windows | `%USERPROFILE%\.config\opencode\skills\out-of-the-box\` |
+| Another project | `<your-project>/.opencode/skills/out-of-the-box/` |
+| Global: macOS/Linux | `~/.config/opencode/skills/out-of-the-box/` |
+| Global: Windows | `%USERPROFILE%\.config\opencode\skills\out-of-the-box\` |
 
-Crie o diretório de destino se necessário. Caso já exista uma versão da skill, compare os arquivos antes de substituí-la. Reinicie o OpenCode após a instalação.
+Create the destination parent if necessary. Compare existing versions before replacing them, then restart OpenCode. Repository validation scripts and maintainer docs do not need to be installed with the skill.
 
-O agente pode reconhecer pedidos pela descrição da skill. Para solicitar seu uso explicitamente, inclua **“Use a skill out-of-the-box”** no prompt.
+The agent may recognize relevant tasks from the skill description. To request it explicitly, say **“Use the out-of-the-box skill.”** English skill content does not require English conversation; the agent should follow the user's preferred language.
 
-## Como funciona
+## How it works
 
 ```mermaid
 flowchart LR
-    A[Entender o trabalho] --> B[Explorar direções]
-    B --> C[Pesquisar soluções]
-    C --> D[Comparar e combinar]
-    D --> E[Definir produto e arquitetura]
-    E --> F[Provar e entregar]
-    F -. Evidência muda a escolha .-> D
+    A[Frame the job] --> B[Generate mechanisms]
+    B --> C[Discover and verify]
+    C --> D[Compose and subtract]
+    D --> E[Define the experience]
+    E --> F[Test and deliver]
+    F -. Evidence changes the choice .-> D
 ```
 
-### 1. Entender antes de escolher
+1. **Frame:** identify the actor, friction, baseline, constraints, and decisive uncertainty.
+2. **Explore:** compare the best small improvement, a cross-domain transfer, and a recombination of capabilities.
+3. **Research:** discover candidates, verify adoption-critical facts, and attach evidence to claims.
+4. **Compose:** define ownership and integration contracts; remove parts that add no necessary value.
+5. **Design:** make the signature interaction, visual direction, states, and architecture concrete.
+6. **Prove:** run the smallest decisive experiment, revise if it fails, and finish the requested scope.
 
-Identifica quem opera, quem compra, qual é o atrito atual, como observar uma melhoria e quais restrições moldam o projeto.
+### Depth follows the decision
 
-### 2. Explorar direções distintas
+| Mode | Suitable for | Expected effort |
+| --- | --- | --- |
+| **Focused** | One interaction or a short deadline | Baseline + meaningful alternative; investigate only decision-changing uncertainty. |
+| **Explore** | A new product, workflow, or significant choice | Distinct mechanisms, current discovery, a strong comparison, and a decisive test. |
+| **Prove** | Expensive migrations or uncertain integrations | Explore plus an experiment in the target environment before adoption. |
 
-Considera uma solução essencial, uma inspiração transferida de outro domínio e uma recombinação de capacidades. As alternativas variam o mecanismo do trabalho, e não apenas a aparência.
+## A concrete example
 
-### 3. Pesquisar com evidência
+**Job:** a finance operator switches between several screens to investigate payment discrepancies.
 
-Usa Trending como fonte de descoberta e verifica os finalistas em fontes primárias. Registra o que foi consultado e distingue fatos, hipóteses e compatibilidades ainda não demonstradas.
-
-### 4. Combinar com intenção
-
-Para cada combinação, o agente precisa responder:
-
-> A resolve o quê? B resolve o quê? O que as duas permitem juntas? Como se integram? Qual é o custo adicional? O que perdemos sem B?
-
-A comparação inclui recursos nativos e dependências que o projeto já possui.
-
-### 5. Definir uma solução coesa
-
-Escolhe uma interação distintiva, uma direção visual relacionada ao domínio e limites arquiteturais suficientes para organizar a implementação.
-
-### 6. Provar e entregar
-
-Testa primeiro a incerteza decisiva. Quando o pedido é de desenvolvimento, segue até a implementação e a verificação do escopo solicitado.
-
-## Um exemplo concreto
-
-**Problema:** operadores de conciliação financeira alternam entre várias telas para investigar divergências.
-
-| Direção | Proposta |
+| Direction | Mechanism |
 | --- | --- |
-| Essencial | Aproveitar a tabela existente, com filtros salvos e ações em lote. |
-| Transferência | Criar uma caixa de entrada de exceções com evidências lado a lado. |
-| Recombinação | Unir comparação de registros, regras explicáveis e prévia de resolução. |
+| Baseline | Existing table with saved filters and bulk editing. |
+| Transfer | An exception inbox with evidence side by side. |
+| Recombination | Record comparison, explainable rules, and a resolution preview. |
 
-Se a maior dor for a troca de contexto, a caixa de entrada pode ser o melhor primeiro passo. Regras e novas bibliotecas entram quando houver uma necessidade demonstrável.
+**Signature interaction:** select a discrepancy, inspect the source records, and resolve it without losing your place in the queue.
 
-**Experimento possível:** concluir casos representativos e comparar passos, recuperação de erros e navegação por teclado com o fluxo atual.
+**Subtraction test:** if comparison and preview already solve the job, remove the rule engine.
 
-*Exemplo ilustrativo: não representa um estudo com clientes nem um ganho já medido.*
+**Falsifier:** if representative cases still require the same external navigation, the proposed interaction has not removed the central friction.
 
-## Exemplos de uso
+*Illustrative hypotheses—not a customer study or a measured business result.*
 
-### Design de uma experiência operacional
+## Usage examples
 
-```text
-Use a skill out-of-the-box para redesenhar a triagem de chamados empresariais.
-O usuário trabalha por teclado e precisa comparar muitos itens.
-Proponha uma interação distintiva e desenvolva o fluxo com seus estados.
-Preserve a identidade visual e os componentes existentes.
-```
-
-### Pesquisa e composição técnica
+### A distinctive operations workspace
 
 ```text
-Use a skill out-of-the-box para avaliar soluções de revisão de contratos.
-Pesquise bibliotecas de comparação de documentos e anotações contextuais.
-Verifique as versões e o contrato entre as partes antes de recomendar a combinação.
-Compare também com uma implementação menor usando a stack atual.
+Use the out-of-the-box skill to redesign enterprise support triage.
+Operators work by keyboard and compare many records.
+Compare distinct compositions, define a signature interaction, and build the flow
+with realistic content and recovery states. Preserve the existing design system.
 ```
 
-### Criatividade sob restrições
+### Technical discovery and composition
 
 ```text
-Pense fora da caixa para melhorar este portal de fornecedores.
-Não adicione dependências nem serviços.
-Concentre o diferencial no fluxo, na hierarquia da informação e na redução de etapas.
-Implemente a melhoria escolhida.
+Use the out-of-the-box skill to evaluate contract-review capabilities.
+Research document comparison and contextual annotation libraries.
+Verify the relevant versions and integration contract. Compare the combination
+with one component or a smaller implementation using our current stack.
 ```
 
-### Construção de produto
+### Creativity under constraints
 
 ```text
-Use a skill out-of-the-box para desenvolver um fluxo B2B de aprovação de compras.
-Inspecione a stack atual, explore abordagens distintas e pesquise soluções pertinentes.
-Escolha uma arquitetura enxuta, teste a integração mais arriscada e conclua
-o fluxo de criação, revisão e aprovação, com tratamento de erros.
+Think outside the box to improve this supplier portal.
+Add no dependencies or services. Focus on the workflow, information hierarchy,
+and removing repeated steps. Implement and verify the selected improvement.
 ```
 
-## Documentação
+### Improving the skill itself
 
-| Documento | Quando consultar |
+```text
+Use out-of-the-box to improve itself.
+Inspect a real correction or execution trace, compare improvement directions,
+research relevant sources, and make the smallest coherent improvement.
+Separate observed problems from expected benefits and report actual validation.
+```
+
+## Documentation
+
+| Resource | Purpose |
 | --- | --- |
-| [SKILL.md](.opencode/skills/out-of-the-box/SKILL.md) | Fluxo principal, critérios de atuação e entrega. |
-| [Métodos criativos](.opencode/skills/out-of-the-box/references/creative-methods.md) | Analogias, inversão, subtração e matriz de recombinação. |
-| [Pesquisa e seleção](.opencode/skills/out-of-the-box/references/research-and-selection.md) | Fontes, evidências, avaliação de candidatos e prova de integração. |
-| [Design B2B e arquitetura](.opencode/skills/out-of-the-box/references/b2b-design-and-architecture.md) | Interações, identidade visual, estados e fronteiras técnicas. |
-| [Template de decisão](.opencode/skills/out-of-the-box/assets/decision-brief.md) | Registro de decisões extensas de produto e arquitetura. |
-| [Avaliação comportamental](.opencode/skills/out-of-the-box/references/evaluation.md) | Dez cenários com resultados esperados e critérios de falha. |
-| [Guia de contribuição](CONTRIBUTING.md) | Como propor melhorias e verificar mudanças. |
+| [Core skill](.opencode/skills/out-of-the-box/SKILL.md) | Operating contract, workflow, and final decision gates. |
+| [Creative methods](.opencode/skills/out-of-the-box/references/creative-methods.md) | Assumption challenges, analogies, inversion, and recombination. |
+| [Research and selection](.opencode/skills/out-of-the-box/references/research-and-selection.md) | Discovery budget, evidence levels, verification, and composition contracts. |
+| [B2B design and architecture](.opencode/skills/out-of-the-box/references/b2b-design-and-architecture.md) | Design contracts, signature interactions, states, and complexity trade-offs. |
+| [Decision brief](.opencode/skills/out-of-the-box/assets/decision-brief.md) | Optional template for substantial decisions. |
+| [Evaluation guide](.opencode/skills/out-of-the-box/references/evaluation.md) | Fresh-session comparisons and evidence-based grading. |
+| [Evaluation cases](.opencode/skills/out-of-the-box/evals/evals.json) | Twelve structured cases, including negative controls. |
+| [Self-improvement record](docs/self-improvement.md) | How the skill was applied to this revision, with sources and limits. |
+| [Contributing](CONTRIBUTING.md) | Editing conventions and verification commands. |
 
-O conteúdo é organizado por **carregamento progressivo**: o agente recebe o fluxo principal e consulta referências quando a tarefa exige mais profundidade.
+The core instructions use **progressive disclosure**: detailed references are loaded only when needed. Evaluation materials are for maintainers, not normal product-task context.
 
-## Estrutura do repositório
+## Repository structure
 
 ```text
 .
-├── .github/
-│   └── workflows/
-│       └── validate.yml
-├── .opencode/
-│   └── skills/
-│       └── out-of-the-box/
-│           ├── SKILL.md
-│           ├── references/
-│           │   ├── creative-methods.md
-│           │   ├── research-and-selection.md
-│           │   ├── b2b-design-and-architecture.md
-│           │   └── evaluation.md
-│           └── assets/
-│               └── decision-brief.md
-├── scripts/
-│   └── validate_skill.py
+├── .github/workflows/validate.yml
+├── .opencode/skills/out-of-the-box/
+│   ├── SKILL.md
+│   ├── references/
+│   │   ├── creative-methods.md
+│   │   ├── research-and-selection.md
+│   │   ├── b2b-design-and-architecture.md
+│   │   └── evaluation.md
+│   ├── assets/decision-brief.md
+│   └── evals/evals.json
+├── docs/self-improvement.md
+├── scripts/validate_skill.py
+├── tests/test_validate_skill.py
 ├── CONTRIBUTING.md
 └── README.md
 ```
 
-## Qualidade e avaliação
+## Validation and evaluation
 
-Execute na raiz do repositório:
+Run from the repository root:
 
 ```bash
 python scripts/validate_skill.py
+python -m unittest discover -s tests -v
 ```
 
-O validador verifica os arquivos esperados, o formato de frontmatter utilizado, o nome da skill, limites de tamanho e links locais na skill e no README. Usa apenas a biblioteca padrão do Python.
+The dependency-free validator checks the repository's frontmatter convention, required files, local Markdown file links, and evaluation-case structure. It also checks local file links in maintainer documentation. It does not implement a general YAML/Markdown parser, validate heading anchors, or fetch external URLs.
 
-A mesma verificação roda no **GitHub Actions** em pushes e pull requests para `main`.
+Tests exercise malformed inputs and missing evidence-case data. Both commands run in GitHub Actions on pushes and pull requests to `main`.
 
-### O que cada avaliação demonstra
-
-| Camada | Cobertura |
+| Evidence | What it establishes |
 | --- | --- |
-| Validação estrutural | Organização e integridade básica dos documentos. |
-| Cenários comportamentais | Uso da skill em sessões novas, com revisão da resposta e das ferramentas acionadas. |
-| Validação de produto | Experimentos e métricas do projeto em que a skill for aplicada. |
+| Structural validation and unit tests | Integrity of this package and behavior of its validator. |
+| Author walkthrough | Instruction consistency and expected behavior for reviewed cases. |
+| Fresh-session behavioral comparison | Observed outputs and tool use relative to a baseline. |
+| Product experiment | A result under the stated project conditions. |
 
-O validador não é um parser YAML geral. Os dez cenários comportamentais são um protocolo de avaliação manual; passar na validação estrutural não significa que esses cenários foram executados.
+The JSON cases are inputs for evaluation, not an automatic agent runner or recorded passes. Some require an evaluator-provided app or tool setup. Passing CI does not establish creativity, integration readiness, or business impact.
 
-## Perguntas frequentes
+## FAQ
 
 <details>
-<summary><strong>A skill exige novas bibliotecas?</strong></summary>
+<summary><strong>Does this require new libraries?</strong></summary>
 
-Não. Reutilizar a stack ou usar recursos nativos pode ser a melhor decisão. Toda dependência precisa ter uma responsabilidade clara e justificar seu custo.
+No. Existing dependencies or native capabilities can win. Every component must contribute necessary value and have a clear responsibility.
 
 </details>
 
 <details>
-<summary><strong>Ela sempre consulta o GitHub Trending?</strong></summary>
+<summary><strong>Does it always consult GitHub Trending?</strong></summary>
 
-O fluxo completo inclui a consulta atual. Em tarefas rápidas, a pesquisa é proporcional à decisão; um pedido explícito de consulta também deve ser atendido. Sem acesso web, o agente deve informar a limitação e identificar recomendações não verificadas.
-
-</details>
-
-<details>
-<summary><strong>Ela funciona em outros agentes?</strong></summary>
-
-Os arquivos seguem o formato Agent Skills. A instalação e o fluxo documentados aqui são voltados ao OpenCode. Outros agentes precisam suportar esse formato e oferecer as ferramentas necessárias; a compatibilidade operacional com eles não foi validada neste projeto.
+Explore and Prove include current discovery. Focused work uses research when it can affect the decision, and explicit research requests are honored. If web access is unavailable, the agent should disclose the limitation and mark external claims as unverified.
 
 </details>
 
 <details>
-<summary><strong>Preciso configurar um MCP ou instalar pacotes?</strong></summary>
+<summary><strong>Does it work with other agents?</strong></summary>
 
-A skill é composta por instruções Markdown e não exige um MCP específico. Pesquisa, edição e testes dependem das ferramentas já disponíveis no agente. Python é necessário somente para o validador deste repositório.
+The files use the Agent Skills format. Installation and workflow documentation target OpenCode. Other agents need compatible discovery and tools; operational compatibility with them has not been established here.
 
 </details>
 
 <details>
-<summary><strong>Quando esta skill não deve ser ativada?</strong></summary>
+<summary><strong>Does it need a specific MCP server?</strong></summary>
 
-Correções pontuais, mudanças mecânicas e consultas de documentação sem decisão criativa de produto ou arquitetura não precisam deste fluxo.
+No. It uses the agent's available research, editing, and verification tools. It adds instructions, not permissions or external services.
 
 </details>
 
-## Contribuir
+<details>
+<summary><strong>When should it stay inactive?</strong></summary>
 
-Contribuições são especialmente úteis quando trazem exemplos concretos, falhas reproduzíveis ou simplificações que melhorem o comportamento do agente.
+Mechanical edits, isolated bug fixes, and documentation lookups without a creative product or architecture decision should remain focused on their original task.
 
-Leia o [guia de contribuição](CONTRIBUTING.md), abra uma [issue](https://github.com/mateuxcv/skill-out-of-the-box/issues) ou envie um pull request com contexto, mudança proposta e verificações realizadas.
+</details>
 
-## Referências
+## Contributing
 
-- [Agent Skills — Specification](https://agentskills.io/specification)
-- [OpenCode — Agent Skills](https://opencode.ai/docs/skills/)
+Concrete failure cases, better experiments, and simplifications are especially useful. Read [CONTRIBUTING.md](CONTRIBUTING.md), open an [issue](https://github.com/mateuxcv/skill-out-of-the-box/issues), or submit a focused pull request with evidence.
+
+## References
+
+- [Agent Skills specification](https://agentskills.io/specification)
+- [Skill-authoring best practices](https://agentskills.io/skill-creation/best-practices)
+- [Evaluating skill output quality](https://agentskills.io/skill-creation/evaluating-skills)
+- [OpenCode skills documentation](https://opencode.ai/docs/skills/)
 - [GitHub Trending](https://github.com/trending?since=weekly)
 
 ---
 
 <div align="center">
 
-Criado por [Mateus Victor](https://github.com/mateuxcv).<br>
-**Explore com amplitude. Construa com critério.**
+Created by [Mateus Victor](https://github.com/mateuxcv).<br>
+**Explore broadly. Build with purpose.**
 
 </div>

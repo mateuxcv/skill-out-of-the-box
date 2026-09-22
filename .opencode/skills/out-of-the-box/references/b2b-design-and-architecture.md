@@ -1,54 +1,56 @@
-# Design B2B e arquitetura enxuta
+# B2B design and lean architecture
 
-Use os critérios ligados ao caso concreto. Não transforme esta referência em uma lista de funcionalidades obrigatórias.
+Apply the criteria relevant to the actual workflow. This is not a mandatory feature checklist for every business application.
 
-## Produto: organize em torno da decisão
+## Organize around a decision
 
-- Diferencie comprador, operador e administrador quando tiverem necessidades distintas.
-- Identifique a unidade de trabalho: pedido, conta, documento, incidente ou outro objeto do domínio.
-- Faça a tela principal responder: o que exige atenção, por quê e o que posso fazer agora?
-- Priorize tabelas quando comparar e ordenar for o trabalho. Use cards, grafos e timelines quando sua estrutura ajudar a decidir.
-- Ofereça profundidade progressiva: resumo para triagem, detalhe para investigação e ação no contexto apropriado.
-- Considere filtros salvos, ações em lote, teclado, importação/exportação e retomada de trabalho quando houver uso repetitivo.
-- Observe adoção e custo de mudança: uma solução tecnicamente melhor pode falhar se romper integrações e hábitos indispensáveis.
+- Identify the unit of work: order, account, document, incident, or exception.
+- Distinguish operator, buyer, and administrator when their needs differ.
+- Make the primary workspace answer: what needs attention, why, and what can I do now?
+- Use tables for comparison and ordering; use timelines, graphs, or cards when their structure improves the actual decision.
+- Support progressive depth: triage summary, investigation detail, and action in the appropriate context.
+- Consider saved views, bulk actions, keyboard navigation, import/export, and task resumption for repeated work.
+- Account for adoption cost: a technically superior interface may fail if it breaks indispensable integrations and habits.
 
-## Identidade visual com intenção
+## Make the visual direction inspectable
 
-Defina uma direção visual antes de produzir componentes:
+Before building a screen, specify a compact **design contract**:
 
-1. **Caráter:** por exemplo, editorial e analítico, operacional e compacto, ou técnico e preciso; vincule a escolha ao público.
-2. **Hierarquia:** destaque a informação decisiva e a ação principal, não todas as métricas igualmente.
-3. **Tokens:** tipografia, espaçamento, cores semânticas, densidade, bordas e elevação coerentes com o sistema existente.
-4. **Composição:** determine a proporção entre navegação, área de trabalho, evidência e detalhe.
-5. **Feedback:** movimento e transições devem explicar mudança de estado ou preservar orientação.
+1. **Character:** e.g. editorial and analytical, compact and operational, or precise and technical; tie it to users and brand.
+2. **Composition:** navigation, work surface, evidence, and detail proportions.
+3. **Hierarchy:** the information that drives the decision and the primary action.
+4. **Tokens:** typography, spacing, semantic color, density, borders, and elevation consistent with the existing system.
+5. **Signature interaction:** the demonstrable moment that makes the job easier.
+6. **States and input:** realistic content, keyboard route, responsive behavior, and recovery.
 
-Evite adotar como padrão universal hero com gradiente, excesso de cards, ícones sem função e uma paleta arbitrária. Também não os proíba quando fizerem sentido para a marca e a tarefa. Preserve a identidade existente ao evoluir um produto.
+For a substantial redesign, compare two distinct compositions with a sketch, wireframe, or prototype before polishing. A text-only task may use an annotated layout description. Do not claim a visual comparison if none was performed.
 
-## Estados fazem parte da solução
+Use domain-shaped content: long company names, missing values, conflicting records, and realistic amounts or dates. A layout that only works with short placeholder text has not demonstrated usability.
 
-Projete os estados relevantes: inicial vazio, carregando, parcial, sem resultados, erro recuperável, sucesso, conflito e acesso insuficiente.
+Gradients, large cards, illustration, and motion are choices, not a universal style. Motion should explain state changes or preserve orientation; honor reduced-motion preferences. Preserve the existing identity when evolving a product.
 
-- Erros devem mostrar o que aconteceu e como prosseguir sem perder trabalho.
-- Confirme operações irreversíveis no ponto necessário; ofereça desfazer quando tecnicamente viável.
-- Use HTML semântico, labels, ordem de foco, contraste e informação que não dependa só de cor.
-- Em drag-and-drop, considere alternativa por teclado; em virtualização, confira foco e acessibilidade.
-- Adapte ao dispositivo e contexto real: operação de campo móvel e estação de trabalho densa têm prioridades diferentes.
+## States are part of the product
 
-## IA como capacidade opcional
+Cover relevant initial, loading, empty, partial, no-results, error, success, conflict, and insufficient-access states.
 
-Use IA quando a tarefa envolver ambiguidade, linguagem ou síntese que regras simples não resolvam bem.
+- Explain failure and the next action without losing the user's work.
+- Offer undo where feasible; request confirmation at the necessary point for irreversible actions.
+- Use semantic controls, labels, focus order, adequate contrast, and information conveyed beyond color.
+- Provide keyboard alternatives to drag-and-drop. Test focus behavior when virtualizing content.
+- Match the actual device: field work on a phone and a dense desktop operations console need different compositions.
+- Verify a complete path from entry through decision to recovery, not only the ideal screenshot.
 
-- Defina a ação concreta assistida, qualidade aceitável, latência e custo.
-- Apresente origem e evidências para sugestões factuais quando disponíveis.
-- Mantenha correção e continuidade do fluxo diante de erro ou indisponibilidade.
-- Separe sugestão de execução de ações consequentes conforme o fluxo e as autorizações existentes.
-- Não acrescente banco vetorial, framework de agentes ou interface de chat sem necessidade demonstrada.
+## Use AI for a specific capability
 
-## Fronteiras de arquitetura
+AI is useful when ambiguity, language, or synthesis makes a deterministic alternative inadequate.
 
-Em projeto existente, melhore dentro das convenções atuais; não imponha uma nova organização apenas por preferência. Em projeto novo, comece com uma aplicação coesa e módulos por capacidade quando adequado.
+Define the assisted action, acceptable quality, latency, cost, and correction path. Show supporting evidence for factual suggestions when available. Preserve workflow continuity during errors or outages. Separate suggestions from consequential actions according to the actual authorization model.
 
-Exemplo conceitual, a adaptar ao framework:
+Do not automatically add chat, a vector database, or an agent framework. Compare with rules, search, direct manipulation, and sensible defaults.
+
+## Keep architecture proportional
+
+Work within existing conventions. For a new product, start with a cohesive application and capability-oriented modules when appropriate.
 
 ```text
 features/
@@ -59,31 +61,31 @@ features/
     integrations/
 ```
 
-Uma funcionalidade pequena pode caber em poucos arquivos. Separe domínio de detalhes voláteis quando isso facilitar evolução e testes; não crie interfaces e fábricas sem benefício.
+This is a conceptual example, not a mandatory folder tree. A small feature may fit in a few files. Separate meaningful business rules from volatile implementation details when the boundary helps evolution or testing.
 
-- Mantenha regras de negócio fora de handlers visuais quando tiverem significado próprio.
-- Estabeleça uma fonte de verdade para cada dado e uma responsabilidade por módulo.
-- Isole integrações externas nos pontos em que troca, falha ou contrato justificarem o limite.
-- Evite estado global, bibliotecas de UI concorrentes e motores duplicados de validação sem motivo concreto.
-- Acrescente processamento assíncrono quando duração, confiabilidade ou volume exigirem; não por estética arquitetural.
-- Prefira deploy e operação simples enquanto os requisitos não justificarem distribuição.
+- Give each datum a source of truth and each module a clear responsibility.
+- Isolate external integrations where replacement, failure, or a contract warrants the boundary.
+- Avoid competing owners of global state, UI systems, or validation logic without a specific reason.
+- Add asynchronous processing when duration, reliability, or workload requires it.
+- Prefer simple deployment and operation until requirements justify distribution.
+- Count integration glue, duplicated state, migration work, and operational burden as complexity—not just package count.
 
-## Requisitos B2B orientados ao contexto
+## Spend complexity where the value lives
 
-Se o sistema atender múltiplas empresas, verifique isolamento de tenant e autorização no servidor. Se lidar com aprovações ou alterações rastreáveis, modele autoria e histórico apropriados. Se houver integrações repetíveis, trate contratos e duplicação quando relevante.
+Keep commodity capabilities conventional. Concentrate experimentation on the signature interaction or capability that differentiates the workflow.
 
-SSO, RBAC sofisticado, auditoria extensa, residência de dados e múltiplas regiões são decisões motivadas pelo caso, não acessórios automáticos de todo MVP B2B.
+For an uncertain component, specify its boundary, fallback, and removal condition. Do not build a generic abstraction platform merely because a dependency might change someday.
 
-## Prova mínima
+When the application serves multiple companies, enforce tenant isolation and authorization on the server. Model authorship and history when approvals or traceable changes require them. SSO, elaborate roles, extensive audit, residency, and multiple regions should follow actual requirements.
 
-Escolha a verificação que pode contrariar a proposta:
+## Choose a test that could disprove the idea
 
-| Hipótese | Experimento útil |
-| --- | --- |
-| Fila de exceções reduz troca de contexto | Completar casos representativos e comparar passos com o fluxo atual. |
-| Composição de bibliotecas suporta a experiência | Executar seleção, edição, filtro e recuperação de erro no runtime real. |
-| Virtualização é necessária | Medir o cenário representativo sem e com ela; observar também foco e memória. |
-| Automação é confiável | Usar casos normais, ambíguos e incorretos; verificar fallback e correção. |
-| Identidade visual melhora legibilidade | Inspecionar conteúdo realista em densidades e tamanhos relevantes. |
+| Hypothesis | Useful experiment | Example falsifier |
+| --- | --- | --- |
+| Exception queues reduce context switching | Complete representative cases against the current flow. | Evidence still requires the same external navigation. |
+| Two libraries enable direct editing | Exercise selection, editing, filtering, and recovery in the target runtime. | Focus or state diverges between components. |
+| Virtualization is necessary | Compare representative workloads with and without it. | Pagination already meets the target with less complexity. |
+| Automation saves work | Use normal, ambiguous, and incorrect inputs. | Correction costs exceed manual handling for the target cases. |
+| Visual hierarchy improves scanning | Inspect realistic content at relevant densities and sizes. | Users cannot identify the next action or important exception. |
 
-Metas de negócio são hipóteses até haver dados. Uma demonstração técnica valida viabilidade; não comprova adoção ou ganho de receita.
+Set actual thresholds from context before running the test; these examples are not benchmarks. Technical feasibility does not prove adoption, revenue, or customer preference.

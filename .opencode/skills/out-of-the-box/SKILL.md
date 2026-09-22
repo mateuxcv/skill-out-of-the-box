@@ -1,137 +1,126 @@
 ---
 name: out-of-the-box
-description: "Use quando o usuário pedir pensar fora da caixa, soluções criativas, design diferenciado ou explorar e combinar bibliotecas para criar ou evoluir aplicações B2B e SaaS. Conecta descoberta de produto, GitHub Trending, pesquisa técnica e experimentos a uma arquitetura enxuta. Também se aplica a pedidos equivalentes como out-of-the-box e creative B2B product design. Não ativar para correções pontuais, mudanças mecânicas ou consultas de documentação sem decisão criativa de produto ou arquitetura."
+description: "Use when asked to think outside the box, design a distinctive B2B or SaaS experience, or discover and combine libraries for a business application. Turns creative exploration, GitHub Trending research, and technical experiments into a useful product with a lean architecture. Also use when explicitly asked to improve this skill using itself. Do not activate for mechanical edits, isolated bug fixes, or documentation lookups without a creative product or architecture decision."
 ---
 
 # Out of the Box
 
-Transforme uma dor de negócio em uma solução útil e diferenciada, pesquisando possibilidades além da stack habitual e escolhendo a menor arquitetura capaz de entregar o resultado.
+**Explore broadly. Select rigorously. Build simply.**
 
-**Princípio:** amplitude na exploração, rigor na seleção, simplicidade na execução.
+Turn a business problem into a distinctive, useful experience. Search beyond familiar tools, combine complementary capabilities, and choose the smallest architecture that preserves the value of the idea.
 
-## Contrato de atuação
+## Operating contract
 
-- Comece pelo trabalho que a pessoa precisa realizar, e não por uma biblioteca favorita ou uma tela genérica de dashboard.
-- Criatividade deve mudar a qualidade de uma decisão, reduzir trabalho ou habilitar uma capacidade importante. Novidade visual isolada não basta.
-- Respeite instruções do projeto, stack existente, escopo, orçamento e ferramentas disponíveis. Esta skill não concede permissões nem exige agentes adicionais.
-- Se o pedido for implementar, avance da exploração até a entrega e verificação. Se for idear ou comparar, entregue a decisão no nível solicitado.
-- Pergunte apenas quando faltar uma informação que altere materialmente a solução. Para lacunas reversíveis, explicite uma hipótese e avance.
-- Apresente conclusões, evidências, alternativas e trade-offs de forma concisa; não exponha raciocínio interno passo a passo.
+- Follow the user's constraints and repository conventions. This skill grants no permissions and requires no additional agents.
+- Ask only when missing information could materially change the decision. State reversible assumptions and continue otherwise.
+- Match the requested deliverable: a proposal needs a decision; a build request needs implementation and verification, not just a plan or spike.
+- Share conclusions, evidence, alternatives, and trade-offs rather than private step-by-step reasoning.
+- Keep skill files in English; communicate with the user in their preferred language unless asked otherwise.
 
-## Profundidade proporcional
+## Choose the depth
 
-| Contexto | Aplicação |
-| --- | --- |
-| Ideia localizada ou prazo curto | Brief breve, 2 direções distintas, pesquisa focada na incerteza e um teste simples. |
-| Novo fluxo, produto ou escolha técnica relevante | Fluxo completo abaixo; normalmente 3 direções e 3–5 candidatos técnicos relevantes. |
-| Alto custo de migração ou incerteza técnica central | Aprofunde documentação e faça um spike da integração antes de comprometer a arquitetura. |
+| Mode | Use when | Minimum useful process |
+| --- | --- | --- |
+| **Focused** | One interaction or a tight deadline | Baseline + one meaningful alternative; investigate only the uncertainty that could change the choice. |
+| **Explore** | A new product, workflow, or significant technical choice | Baseline + two different mechanisms; current discovery; compare finalists; prove the riskiest assumption. |
+| **Prove** | A costly migration or uncertain integration | Explore, then test the decisive contract in the target environment before committing to it. |
 
-Os números são limites orientativos, não metas de volume. Não alongue uma tarefa pequena para preencher um ritual. Mudanças mecânicas dispensam este fluxo.
+These are defaults, not output quotas. Keep the visible brief short. Do not stretch a small task into a research ceremony.
 
-## 1. Entenda o trabalho e as restrições
+## 1. Frame the job
 
-Inspecione os arquivos e convenções relevantes: instruções locais, manifesto, lockfile, organização do código, componentes, integrações e testes existentes. Em projeto novo, estabeleça as restrições mínimas antes de escolher a stack.
+Inspect relevant project instructions, manifests, lockfiles, components, domain code, integrations, and checks before picking a stack.
 
-Resuma:
+Capture: **actor → recurring job → current friction → desired observable outcome → constraints → decisive uncertainty**. Distinguish operator, buyer, and administrator when their needs differ. Identify what the current solution already does well.
 
-1. **Pessoa e trabalho:** quem opera, quem compra e quem administra; o que precisa acontecer e com que frequência.
-2. **Atrito atual:** onde há espera, erro, retrabalho, troca de ferramenta ou perda de contexto.
-3. **Resultado observável:** tempo até concluir uma tarefa, taxa de erro, adoção do fluxo ou outro indicador ligado à dor.
-4. **Restrições:** ambiente, prazo, custo, dados, integrações, experiência da equipe e volume esperado.
-5. **Incerteza decisiva:** o que precisa ser aprendido para escolher bem.
+State a baseline and a success criterion. If neither has been measured, label them as hypotheses or proposed targets. Do not invent customer interviews, business metrics, or enterprise requirements.
 
-Não invente entrevistas, métricas de baseline, requisitos enterprise ou validações com clientes. Identifique hipótese, evidência e meta proposta separadamente.
+## 2. Generate mechanisms, not cosmetic variants
 
-## 2. Expanda o espaço de soluções
+Read [creative methods](references/creative-methods.md) when generating directions.
 
-Antes de escolher bibliotecas, formule direções que mudem o mecanismo da experiência. Use [os métodos criativos](references/creative-methods.md) quando precisar ampliar as opções.
+For an Explore or Prove task, consider:
 
-Para o fluxo completo, considere:
+1. **Baseline:** the best small improvement using existing capabilities.
+2. **Transfer:** a useful mechanism borrowed from a different domain.
+3. **Recombination:** complementary capabilities that remove a step or enable a new outcome.
 
-- **Essencial:** resolver o trabalho com recursos existentes e o mínimo de mudança.
-- **Transferência:** adaptar um padrão útil de outro domínio ao contexto B2B.
-- **Recombinação:** unir capacidades complementares para entregar um resultado novo ou eliminar uma etapa.
+Include one **bold but feasible** direction that challenges a workflow assumption. Do not eliminate it just because the baseline is familiar; test whether its incremental value pays for its complexity. Hard constraints still apply.
 
-Varie fluxo, interação ou distribuição do trabalho, não apenas cor e layout. Inclua uma opção de subtração: o que pode deixar de existir? Não imponha IA, chat, canvas ou colaboração em tempo real quando não melhorarem o trabalho.
+Use this idea card: **pain → mechanism → expected benefit → what disappears → main risk → cheapest falsifying test**.
 
-Para cada direção, produza uma ficha curta: dor → mecanismo → benefício esperado → maior risco → menor experimento. Escolha uma **interação distintiva** para explorar primeiro.
+**Diversity gate:** if the directions only change colors, layout, vendors, or framework names, regenerate an alternative. Change the unit of work, decision sequence, interaction, or coordination model instead.
 
-## 3. Pesquise além do repertório habitual
+## 3. Discover and verify
 
-Leia [o protocolo de pesquisa](references/research-and-selection.md) ao fazer descoberta externa ou selecionar dependências.
+Read [research and selection](references/research-and-selection.md) before external discovery or dependency decisions.
 
-Em explorações completas, consulte GitHub Trending atual e busca orientada ao problema, além de alternativas maduras. Em tarefas rápidas, consulte Trending quando a descoberta de novas soluções puder influenciar a decisão. Se o usuário pedir explicitamente, tente a consulta mesmo no modo rápido.
+- In Explore and Prove, consult current [GitHub Trending](https://github.com/trending?since=weekly), problem-oriented search, and established alternatives. In Focused mode, research when it can affect the choice; honor an explicit research request.
+- Search for **capability + constraint**, not just favorite library names. A relevant discovery can inform an interaction pattern without becoming a dependency.
+- Open primary sources for finalists: official documentation, repository, releases, package registry, and applicable license.
+- Keep evidence attached to the claim: **source + access date + version if relevant + observation + uncertainty**.
+- Distinguish **discovered**, **documented**, **tested**, and **measured**. Reading an API does not prove two packages work together.
+- If web access fails, disclose it and continue with local evidence and provisional candidates. Do not fabricate current research.
 
-- Comece por https://github.com/trending?since=weekly e restrinja por linguagem se isso ajudar.
-- Cruze descobertas com documentação oficial, repositório, releases e registro de pacotes.
-- Busque capacidades e gargalos, não somente nomes de bibliotecas conhecidas.
-- Registre URL, data de consulta, achado relevante e o que ainda não foi verificado.
-- Não confunda Trending, estrelas, atividade recente ou uma demo bonita com maturidade e adequação.
-- Se a rede ou a ferramenta falhar, informe a limitação, use o material local e trate candidatos lembrados como não verificados. Nunca afirme pesquisa atual que não realizou.
+Default to a short discovery pass and a small shortlist. Stop once a viable finalist, a strong alternative, and a test for the decisive uncertainty exist. Reopen research only if a failed test or changed constraint could change the decision.
 
-Faça uma primeira rodada curta. Encerre a exploração quando houver uma opção adequada, uma alternativa comparável e um caminho para testar a incerteza decisiva. Aprofunde somente se uma lacuna puder mudar a escolha. Não instale candidatos apenas para aumentar a lista.
+## 4. Compose capabilities; subtract complexity
 
-## 4. Combine capacidades com responsabilidade
+For each proposed combination, complete:
 
-Para cada composição proposta, escreva:
+> A owns __. B owns __. Together they enable __. Their contract is __. The added cost is __. Removing B would lose __.
 
-> Capacidade A resolve __. Capacidade B resolve __. Juntas permitem __. Integram-se por __. O custo adicional é __. Sem B, perderíamos __.
+Check runtime and version compatibility, data contracts, state ownership, rendering, failure behavior, and overlapping responsibilities. Verify rather than assume integration.
 
-Verifique compatibilidade real de runtime, versões, contratos de dados, renderização e responsabilidade sobre estado. A existência de dois pacotes não comprova que funcionem juntos.
+**Subtraction test:** compare the combination with existing dependencies, a native API, and a small implementation. If removing a component preserves the distinctive value and required behavior, remove it.
 
-Compare sempre com reutilizar a stack, usar uma API nativa ou uma implementação pequena. Escolha **nenhuma dependência nova** quando essa opção entregar melhor o resultado total.
+Treat technical or license incompatibility with a hard requirement as a blocker to adoption. An unresolved critical claim remains an experiment, not a production recommendation. Respect explicit dependency constraints; explain conflicts rather than silently replacing the user's requirements.
 
-Uma dependência precisa demonstrar contribuição concreta. Duas soluções para a mesma responsabilidade exigem uma justificativa específica. Licença incompatível ou incompatibilidade técnica comprovada impedem adoção; incerteza relevante pede verificação, não uma nota otimista.
+## 5. Make the experience and architecture concrete
 
-## 5. Convirja em produto e arquitetura
+Read [B2B design and architecture](references/b2b-design-and-architecture.md) for interface or system design.
 
-Use [os critérios de design B2B e arquitetura](references/b2b-design-and-architecture.md) conforme o trabalho envolver interface, domínio ou integração.
+Choose a direction by useful differentiation, user value, feasibility, total cost, and evidence confidence. Compare it with the strongest alternative, not a deliberately weak strawman.
 
-Compare as direções por valor ao usuário, diferenciação útil, viabilidade, custo total e confiança nas evidências. As notas, se usadas, são heurísticas de decisão, não medições objetivas.
+Define:
 
-Escolha uma direção e explique por que supera a melhor alternativa. Defina:
+- **Signature interaction:** one observable moment that makes the job easier or enables a better decision.
+- **Experience:** primary journey, information hierarchy, visual character, realistic content, keyboard path, and relevant states.
+- **Architecture:** cohesive responsibilities, sources of truth, essential dependencies, integration boundaries, and an exit path for uncertain components.
+- **Decision boundary:** the evidence that would make you change your mind.
 
-- jornada principal e interação distintiva;
-- linguagem visual vinculada à marca, ao domínio e à densidade de trabalho;
-- módulos e responsabilidades, fonte de verdade e limites das integrações;
-- dependências essenciais e o papel exclusivo de cada uma;
-- principal trade-off, risco não resolvido e experimento que pode invalidar a escolha.
+Prefer the existing structure and a cohesive application. Add layers, services, queues, and abstractions only for demonstrated needs. Simplicity means low total complexity, not the fewest files at any cost.
 
-Prefira organização coesa por funcionalidade e fronteiras explícitas. Introduza camadas, serviços, filas e abstrações somente quando resolvam uma necessidade demonstrável. Arquitetura limpa não se mede por quantidade de pastas.
+## 6. Run the smallest decisive experiment; finish the work
 
-## 6. Prove a hipótese e entregue
+Before building, state **hypothesis → experiment → observable pass/fail condition → fallback**. Test the assumption most likely to invalidate the direction, not the easiest detail to demonstrate.
 
-Implemente a menor fatia vertical que una interação, regra de negócio e dados necessários para testar o valor. Em trabalho exclusivamente visual, prototipe o fluxo e seus estados em vez de construir infraestrutura desnecessária.
+Implement the smallest vertical slice connecting the interaction, business rule, and necessary data. For visual-only work, prototype the flow and its states without unrelated infrastructure.
 
-Antes do experimento, declare o critério de sucesso ou fracasso. Exemplos: tarefa concluível por teclado; importação com erro recuperável; integração viável no runtime alvo; redução de passos sem ocultar informação decisiva.
+- Use actual versions and representative synthetic data for technical experiments.
+- Run the project's relevant checks. Cover important contracts, transitions, and recovery behavior.
+- Inspect the interface with browser tools when available; otherwise state that visual verification was not performed.
+- Do not call a mock a live integration, an expected gain a measurement, or an unexecuted check a pass.
+- When the experiment fails, revise or simplify the direction instead of stacking patches and libraries around a broken assumption.
+- Complete the requested scope after the spike. Do not stop at the experiment when implementation was requested.
 
-- Verifique a integração arriscada primeiro, com versões reais e dados sintéticos representativos.
-- Aproveite comandos e testes do projeto. Teste comportamento relevante, especialmente contratos, transições e falhas.
-- Se houver ferramentas de navegador, confira o fluxo, responsividade, foco e estados visuais. Sem elas, registre que a inspeção visual não ocorreu.
-- Não apresente mock como integração real, hipótese como ganho medido ou teste não executado como aprovado.
-- Se a composição falhar, reduza ou substitua a parte problemática e reavalie o critério. Evite empilhar bibliotecas para encobrir uma incompatibilidade.
-- Conclua o escopo solicitado após o spike; o experimento não substitui a implementação pedida.
+## Deliver a compact decision, not a process transcript
 
-## Entrega proporcional
+Lead with the chosen solution. Include its distinctive value, the strongest alternative, essential evidence, architecture trade-off, and what was actually built and verified. Name unresolved assumptions that affect adoption.
 
-Comunique, no tamanho adequado à tarefa:
+Use the [decision brief](assets/decision-brief.md) only for substantial decisions or requested documentation. Small tasks can use a few paragraphs; do not create process files by default.
 
-1. **Solução escolhida** e resultado que pretende melhorar.
-2. **Diferencial concreto** e por que faz sentido para esse trabalho B2B.
-3. **Evidências e alternativas:** fontes verificadas, alternativa mais forte e incertezas.
-4. **Composição técnica:** responsabilidades, dependências e trade-off principal.
-5. **Execução:** o que foi feito, o que foi testado e limitações reais.
+## Final gates
 
-Use [o template de decisão](assets/decision-brief.md) para decisões extensas ou documentação solicitada; em tarefas pequenas, responda diretamente. Não crie arquivos de processo por obrigação.
+- **Value:** would the idea still matter without the technology names?
+- **Novelty:** does the chosen mechanism change the work, not just its appearance?
+- **Simplicity:** does every component preserve necessary value after the subtraction test?
+- **Evidence:** is each important claim supported at the level required for adoption?
+- **Usability:** can the user complete and recover the primary workflow?
+- **Delivery:** did the work reach the requested scope, with honest verification?
 
-## Revisão final
+## Improving this skill itself
 
-- A proposta ainda seria valiosa se removêssemos os nomes das tecnologias?
-- As alternativas mudam o trabalho, ou são a mesma tela com outra aparência?
-- Cada dependência remove complexidade relevante ou habilita algo necessário?
-- A combinação foi verificada no nível exigido pela decisão?
-- O usuário consegue compreender, executar e recuperar o fluxo principal?
-- A arquitetura respeita o projeto e pode evoluir sem uma reescrita previsível?
-- As fontes e o relato de verificação correspondem ao que realmente foi consultado e executado?
+When explicitly requested, apply the same loop to this repository: inspect a real correction or execution trace, compare improvement directions, research relevant primary sources, change the smallest coherent set of instructions, and validate the result. Record the observed problem separately from the expected benefit.
 
-Para avaliar a própria skill, use [os cenários comportamentais](references/evaluation.md). Eles não precisam ser carregados durante tarefas normais de produto.
+Read [evaluation guidance](references/evaluation.md) and the [evaluation cases](evals/evals.json) when evaluating this skill. They are not normal product-task context. Compare old and new versions in fresh sessions when available; an author self-review is useful evidence but not an independent benchmark.

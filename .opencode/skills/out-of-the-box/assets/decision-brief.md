@@ -1,47 +1,54 @@
-# Decisão de produto e arquitetura — [nome]
+# Product and architecture decision — [name]
 
-Use apenas as seções relevantes. Substitua os placeholders; não apresente este template como decisão já tomada.
+Use only relevant sections. Replace placeholders; this template is not an already-made decision.
 
-## Trabalho e resultado
+## Job and outcome
 
-- Pessoa, contexto e frequência:
-- Dor e fluxo atual:
-- Evidências disponíveis:
-- Resultado desejado e como observar:
-- Restrições e hipóteses:
+- Actor, context, and frequency:
+- Current friction and what already works:
+- Evidence available:
+- Baseline and desired observable outcome:
+- Hard constraints and reversible assumptions:
+- Decisive uncertainty:
 
-## Direções consideradas
+## Meaningfully different directions
 
-| Direção | Mecanismo distinto | Benefício esperado | Risco | Experimento |
+| Direction | Mechanism | Expected value | What disappears | Main risk | Falsifying test |
+| --- | --- | --- | --- | --- | --- |
+| Best existing-stack baseline | | | | | |
+| Transfer from another domain | | | | | |
+| Recombination | | | | | |
+
+- Bold but feasible challenger:
+- Diversity check: how the alternatives change the work:
+
+## Choice and design contract
+
+- Chosen direction and signature interaction:
+- Why it beats the strongest alternative:
+- Visual character, composition, hierarchy, and realistic content:
+- Keyboard path, responsive behavior, and recovery:
+- Evidence that would change the decision:
+
+## Evidence and composition
+
+| Claim/candidate | Source/date/version | Evidence level | Observation | Remaining uncertainty |
 | --- | --- | --- | --- | --- |
-| Essencial | | | | |
-| Transferência | | | | |
-| Recombinação | | | | |
+| | | Discovered/documented/tested/measured | | |
 
-## Escolha
+- Existing-stack or native alternative:
+- Essential dependencies and verified versions, when relevant:
+- A owns __; B owns __; together they enable __:
+- Shared contract and source of truth:
+- Subtraction test: what removing B loses:
+- Total cost, principal trade-off, fallback, and exit path:
 
-- Solução e interação distintiva:
-- Por que supera a melhor alternativa:
-- Direção visual e relação com o domínio:
-- O que foi simplificado ou eliminado:
+## Experiment and delivery
 
-## Pesquisa e composição
-
-| Capacidade/candidato | Fonte e data | Evidência | Papel exclusivo | Incerteza |
-| --- | --- | --- | --- | --- |
-| | | | | |
-
-- Alternativa com recursos existentes:
-- Bibliotecas escolhidas e versões verificadas, se aplicável:
-- Contratos entre partes e fonte de verdade:
-- Compatibilidade comprovada e pendências:
-- Custo total, trade-off e caminho de substituição:
-
-## Execução e validação
-
-- Menor fatia que testa o valor:
-- Critério de sucesso e condição de descarte:
-- Implementação realizada:
-- Testes/inspeções executados e resultados:
-- O que permanece hipótese ou não foi verificado:
-- Próximo passo necessário para concluir o escopo, se houver:
+- Hypothesis:
+- Smallest decisive experiment:
+- Observable pass/fail condition, defined before execution:
+- Commands or procedures actually executed:
+- Result and evidence:
+- Implemented scope:
+- Unverified claims and remaining work:

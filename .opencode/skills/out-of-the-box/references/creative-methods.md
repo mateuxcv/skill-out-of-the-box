@@ -1,75 +1,92 @@
-# Métodos para criatividade útil
+# Creative methods for useful differentiation
 
-Escolha dois ou três métodos que desafiem a primeira solução óbvia. Não execute todos mecanicamente.
+Choose two or three methods that challenge the obvious answer. Generate briefly before evaluating; judging every idea immediately tends to reproduce the existing solution.
 
-## 1. Transferência de domínio
+## Start with an assumption worth challenging
 
-Procure um domínio que já resolva um problema estrutural semelhante. Transfira o mecanismo, não a aparência.
+Complete: “The current workflow assumes __. If that were unnecessary, the user could __.”
 
-| Trabalho B2B | Analogia | Mecanismo transferível | Limite a verificar |
+Examples: every request needs a separate detail page; all records deserve equal attention; collaboration must happen simultaneously; users must configure the tool before receiving value.
+
+Respect hard constraints. Distinguish a genuine requirement from a habit or an untested assumption.
+
+## 1. Transfer a mechanism across domains
+
+| Business job | Analogy | Transferable mechanism | Boundary to check |
 | --- | --- | --- | --- |
-| Tratar exceções financeiras | Caixa de entrada | Fila priorizada, contexto e ação no mesmo lugar | Casos críticos não podem desaparecer por ordenação opaca. |
-| Revisar contratos | Revisão de código | Diff, comentários ancorados e resolução de pendências | Preservar referência ao documento e versão analisada. |
-| Planejar capacidade operacional | Edição de vídeo | Linha do tempo, conflitos e simulação | A timeline deve facilitar decisões, não virar decoração. |
-| Investigar contas empresariais | Ferramentas de investigação | Evidências conectadas e navegação por relações | Um grafo só ajuda quando relações importam mais que ordenação. |
-| Configurar políticas | Planilha com prévia | Edição direta e efeito calculado antes de salvar | Regras precisam ser compreensíveis e validáveis. |
+| Resolve financial exceptions | Inbox | Prioritized cases with evidence and action together | Critical cases must remain discoverable. |
+| Review contracts | Code review | Diffs, anchored comments, explicit resolution | Preserve document and version provenance. |
+| Plan operational capacity | Video editing | Timeline, conflict preview, reversible simulation | Time relationships must drive the decision. |
+| Investigate accounts | Investigation workspace | Linked evidence and relationship navigation | A graph must outperform sorting and filtering for the actual job. |
+| Configure policies | Spreadsheet | Direct editing with calculated preview | Users must understand and verify the rules. |
 
-Pergunta-chave: qual característica torna a analogia válida e qual diferença do contexto B2B exige adaptação?
+Ask what makes the analogy valid and where the business context breaks it. Borrow the mechanism, not the visual skin.
 
-## 2. Inversão e subtração
+## 2. Invert or subtract
 
-- E se o trabalho começasse pela exceção, e não pela lista completa?
-- E se o usuário recebesse uma proposta editável, em vez de começar um formulário vazio?
-- E se uma etapa de cadastro pudesse ser adiada até ser necessária?
-- E se a ferramenta levasse a ação ao contexto existente, em vez de exigir outra tela?
-- E se uma visão salva substituísse três filtros repetidos diariamente?
+- Start with exceptions instead of the complete dataset.
+- Offer an editable proposal instead of an empty form.
+- Delay setup until a decision actually needs it.
+- Bring the action into existing context instead of adding another destination.
+- Replace repeated configuration with saved views or sensible defaults.
+- Show the consequences of a change before asking for commitment.
 
-Subtraia navegação, duplicação e coordenação inútil. Preserve o controle necessário para decisões relevantes.
+Remove navigation, duplicate input, and unnecessary coordination. Preserve control that matters to the decision.
 
-## 3. Matriz de recombinação
+## 3. Recombine capabilities
 
-Escolha uma possibilidade por eixo, combine e descarte as combinações sem benefício claro:
+Choose one option per relevant axis; keep only combinations with a clear job-level benefit.
 
-| Eixo | Possibilidades |
+| Axis | Possibilities |
 | --- | --- |
-| Objeto central | Caso, documento, transação, conta, evento, exceção |
-| Interação | Busca, fila, tabela, timeline, comparação, edição direta, canvas |
-| Assistência | Defaults, validação, regras, recomendação, simulação, geração |
-| Coordenação | Individual, passagem de responsabilidade, revisão assíncrona, simultânea |
-| Feedback | Prévia, explicação, histórico, alerta, desfazer, resultado medido |
+| Unit of work | Case, document, transaction, account, event, exception |
+| Interaction | Search, queue, table, timeline, comparison, direct editing, canvas |
+| Assistance | Defaults, validation, rules, recommendation, simulation, generation |
+| Coordination | Individual, handoff, asynchronous review, simultaneous editing |
+| Feedback | Preview, explanation, history, alert, undo, measured outcome |
 
-Exemplo: **documento + comparação + validação + revisão assíncrona + histórico** pode originar um fluxo de conferência rastreável. Só depois procure bibliotecas para as capacidades escolhidas.
+**Document + comparison + validation + asynchronous review + history** suggests traceable review. Select these capabilities before looking for packages.
 
-## 4. Melhor resultado com uma restrição dura
+At the library boundary, combine complementary ownership rather than overlapping engines. For example, a headless table and a virtualizer may be complementary; two competing owners of selection and editing often are not.
 
-Explore: sem novas dependências; sem novo serviço; com conexão instável; com grande densidade de dados; para um operador que repete a tarefa cem vezes ao dia.
+## 4. Use a constraint as a creative tool
 
-Use restrições reais ou explicite que são um exercício. Não transforme a restrição imaginária em requisito permanente.
+Try solving the same job with no new dependency, one deployment, intermittent connectivity, high information density, or an operator repeating the task a hundred times daily.
 
-## 5. Interação distintiva
+State when a constraint is a thought experiment. Do not accidentally turn it into a permanent product requirement.
 
-Descreva um momento concreto, observável e demonstrável:
+## 5. Keep one bold, feasible challenger
 
-> Ao selecionar uma divergência, o operador vê origem e comparação lado a lado e pode resolver o caso sem perder sua posição na fila.
+Ask: “What would make this workflow unnecessary, shorter, or fundamentally easier?”
 
-Evite descrições vazias como “dashboard moderno, intuitivo e com IA”. O diferencial deve sobreviver à retirada desses adjetivos.
+A bold direction might replace repeated manual triage with an explainable exception queue. It does not have to involve AI, spatial interfaces, or a new backend.
 
-## Ficha de ideia
+Do not reject it simply because it is unfamiliar. Identify its incremental value, its incremental complexity, and the smallest test that can disprove the benefit. A bold idea should compete on evidence, not on presentation polish.
 
-- **Dor e contexto:**
-- **Mecanismo proposto:**
-- **Origem da inspiração:** fonte consultada ou analogia autoral, claramente identificada.
-- **Por que melhora o trabalho:**
-- **O que elimina:**
-- **Hipótese que pode estar errada:**
-- **Experimento mínimo e critério de sucesso:**
+## Diversity and signature-interaction gates
 
-## Exemplo de convergência
+Two directions are meaningfully different when at least one changes the unit of work, decision sequence, interaction model, or coordination pattern. New colors, package names, and card arrangements alone do not count.
 
-Pedido: melhorar a conciliação de pagamentos de uma equipe pequena.
+A signature interaction describes a demonstrable moment:
 
-- Essencial: tabela atual com filtros salvos e edição em lote.
-- Transferência: caixa de entrada de divergências com evidências lado a lado.
-- Recombinação: comparação de dados + regras explicáveis + prévia de resolução em lote.
+> Selecting an exception reveals source records and their differences side by side; the operator resolves it without losing their place in the queue.
 
-Escolha a caixa de entrada se a principal dor for alternar contextos. Adicione regras apenas se a recorrência das divergências justificar esse custo. Uma composição tecnicamente interessante pode perder para uma mudança simples de fluxo.
+“Modern, intuitive, AI-powered dashboard” does not specify a mechanism.
+
+## Idea card
+
+- **Job and friction:**
+- **Assumption challenged:**
+- **Mechanism and inspiration:** distinguish an original analogy from a consulted source.
+- **Expected benefit:**
+- **What disappears:** a step, handoff, duplicate state, or unnecessary component.
+- **Main risk:**
+- **Cheapest falsifying test:**
+
+## Worked example: payment reconciliation
+
+- **Baseline:** existing table, saved filters, and bulk editing.
+- **Transfer:** exception inbox with side-by-side evidence.
+- **Recombination:** record comparison, explainable rules, and a resolution preview.
+
+Choose the inbox if context switching is the primary pain. Test rules only if recurring cases justify them. If the preview alone provides the value, remove the rule engine. These are illustrative hypotheses, not measured customer outcomes.
