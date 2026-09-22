@@ -1,0 +1,22 @@
+# Local dependencies and agent-generated runtime files
+node_modules/
+.opencode/package.json
+.opencode/package-lock.json
+.opencode/bun.lock
+.opencode/bun.lockb
+.opencode/.gitignore
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
